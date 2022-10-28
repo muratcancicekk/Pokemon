@@ -15,7 +15,7 @@ struct ContentView: View {
                 Text("Pokemon List")
             }
             HStack(spacing: 20) {
-                ScrollView{
+                ScrollView {
                     ForEach(viewModel.homeListPokemon, id: \.self) { item in
                         NavigationLink {
                             PokemonDetailsView(pokemonDetail: item)
@@ -28,15 +28,15 @@ struct ContentView: View {
                                 .foregroundColor(.white)
                                 .font(.system(size: 20))
                         }
-            
+
                     }
                 }
-            }   .background(.blue)
+            } .background(.blue)
                 .cornerRadius(8)
             Spacer()
         }
-        .padding()
-        .onAppear{
+            .padding()
+            .onAppear {
             viewModel.fetchHomePokemon()
         }
     }

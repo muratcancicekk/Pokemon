@@ -26,6 +26,9 @@
 		FB7A64BB290A9D8D00BD0F3C /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = FB7A64BA290A9D8D00BD0F3C /* FirebaseMessaging */; };
 		FB7A64BD290A9D8D00BD0F3C /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = FB7A64BC290A9D8D00BD0F3C /* FirebaseRemoteConfig */; };
 		FB7A64BF290A9D8D00BD0F3C /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = FB7A64BE290A9D8D00BD0F3C /* FirebaseRemoteConfigSwift */; };
+		FBC617A1290BDCB200563C67 /* DetailsPokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC617A0290BDCB200563C67 /* DetailsPokemonCell.swift */; };
+		FBC617A4290BDFBC00563C67 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = FBC617A3290BDFBC00563C67 /* Kingfisher */; };
+		FBC617A6290BE07C00563C67 /* DetailsPokemonImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC617A5290BE07C00563C67 /* DetailsPokemonImageCell.swift */; };
 		FBD8BA54290BC0430039A66C /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBD8BA53290BC0430039A66C /* DetailsViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,8 @@
 		FB27E7E5290A8EAB009D8278 /* PokemonDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailsView.swift; sourceTree = "<group>"; };
 		FB27E7E8290A90F9009D8278 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FB7614E8290B216E00823471 /* PokemonHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonHome.swift; sourceTree = "<group>"; };
+		FBC617A0290BDCB200563C67 /* DetailsPokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPokemonCell.swift; sourceTree = "<group>"; };
+		FBC617A5290BE07C00563C67 /* DetailsPokemonImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPokemonImageCell.swift; sourceTree = "<group>"; };
 		FBD8BA53290BC0430039A66C /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +79,7 @@
 			files = (
 				FB7A64BB290A9D8D00BD0F3C /* FirebaseMessaging in Frameworks */,
 				FB7A64B9290A9D8D00BD0F3C /* FirebaseCrashlytics in Frameworks */,
+				FBC617A4290BDFBC00563C67 /* Kingfisher in Frameworks */,
 				FB7A64B7290A9D8D00BD0F3C /* FirebaseAnalyticsSwift in Frameworks */,
 				FB7A64BF290A9D8D00BD0F3C /* FirebaseRemoteConfigSwift in Frameworks */,
 				FB7A64B5290A9D8D00BD0F3C /* FirebaseAnalytics in Frameworks */,
@@ -228,6 +234,7 @@
 		FB27E7E4290A8E96009D8278 /* DetailsView */ = {
 			isa = PBXGroup;
 			children = (
+				FBC6179F290BDC8700563C67 /* Cell */,
 				FBD8BA52290BC0360039A66C /* ViewModel */,
 				FB27E7E5290A8EAB009D8278 /* PokemonDetailsView.swift */,
 			);
@@ -240,6 +247,15 @@
 				FB27E7E8290A90F9009D8278 /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		FBC6179F290BDC8700563C67 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBC617A0290BDCB200563C67 /* DetailsPokemonCell.swift */,
+				FBC617A5290BE07C00563C67 /* DetailsPokemonImageCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		FBD8BA52290BC0360039A66C /* ViewModel */ = {
@@ -274,6 +290,7 @@
 				FB7A64BA290A9D8D00BD0F3C /* FirebaseMessaging */,
 				FB7A64BC290A9D8D00BD0F3C /* FirebaseRemoteConfig */,
 				FB7A64BE290A9D8D00BD0F3C /* FirebaseRemoteConfigSwift */,
+				FBC617A3290BDFBC00563C67 /* Kingfisher */,
 			);
 			productName = Pokemon;
 			productReference = FB27E7B0290A88BC009D8278 /* Pokemon.app */;
@@ -349,6 +366,7 @@
 			mainGroup = FB27E7A7290A88BC009D8278;
 			packageReferences = (
 				FB7A64B3290A9D8D00BD0F3C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				FBC617A2290BDFBC00563C67 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = FB27E7B1290A88BC009D8278 /* Products */;
 			projectDirPath = "";
@@ -415,6 +433,7 @@
 			files = (
 				FB27E7B6290A88BC009D8278 /* ContentView.swift in Sources */,
 				FB27E7E6290A8EAB009D8278 /* PokemonDetailsView.swift in Sources */,
+				FBC617A1290BDCB200563C67 /* DetailsPokemonCell.swift in Sources */,
 				FB17604E290ADDB300D19BDA /* HomePageViewModel.swift in Sources */,
 				FB17604A290AD8C600D19BDA /* Network.swift in Sources */,
 				FB27E7B4290A88BC009D8278 /* PokemonApp.swift in Sources */,
@@ -422,6 +441,7 @@
 				FB7614E9290B216E00823471 /* PokemonHome.swift in Sources */,
 				FB27E7E9290A90F9009D8278 /* Constants.swift in Sources */,
 				FBD8BA54290BC0430039A66C /* DetailsViewModel.swift in Sources */,
+				FBC617A6290BE07C00563C67 /* DetailsPokemonImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -783,6 +803,14 @@
 				minimumVersion = 9.6.0;
 			};
 		};
+		FBC617A2290BDFBC00563C67 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -815,6 +843,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FB7A64B3290A9D8D00BD0F3C /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfigSwift;
+		};
+		FBC617A3290BDFBC00563C67 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FBC617A2290BDFBC00563C67 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

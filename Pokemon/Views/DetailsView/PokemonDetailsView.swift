@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct PokemonDetailsView: View {
     @StateObject var viewModel = PokemonDetailsViewModel()
@@ -18,14 +19,18 @@ struct PokemonDetailsView: View {
             if viewModel.isLoaded {
                 Text(pokemonDetail.name ?? "")
                 Text(pokemonDetail.url ?? "")
-                Text(String(viewModel.pokemon[0].stats?[2].stat?.name ?? ""))
+                List(viewModel.deneme, id: \.self) { index in
+                    DetailsPokemonImageCell(pokemonImage: index)
+                }
+                List(viewModel.pokemon[0].stats!, id: \.self) { index in
+                    DetailsPokemonCell(pokemonStats: index)
+                }
             }
             else {
                 ProgressView()
             }
-        }.onAppear(){
+        }.onAppear {
             viewModel.fetchPokemonDetail(url: pokemonDetail.url ?? "")
-
         }
     }
 }

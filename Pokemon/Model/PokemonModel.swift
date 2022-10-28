@@ -29,7 +29,7 @@ struct Ability: Decodable {
 }
 
 // MARK: - Species
-struct Species: Decodable {
+struct Species: Decodable, Hashable {
     let name: String?
     let url: String?
 }
@@ -84,8 +84,8 @@ class Sprites: Decodable {
     let versions: Versions?
     let animated: Sprites?
 
-    init(backDefault: String?, backFemale: NSNull?, backShiny: String?, backShinyFemale: NSNull?,
-         frontDefault: String?, frontFemale: NSNull?, frontShiny: String?, frontShinyFemale: NSNull?, other: Other?, versions: Versions?, animated: Sprites?) {
+    init(backDefault: String?, backShiny: String?,
+        frontDefault: String?, frontShiny: String?, other: Other?, versions: Versions?, animated: Sprites?) {
         self.backDefault = backDefault
         self.backShiny = backShiny
         self.frontDefault = frontDefault
@@ -132,7 +132,7 @@ struct GenerationIii: Decodable {
 }
 
 // MARK: - Emerald
-struct Emerald: Decodable{
+struct Emerald: Decodable {
     let frontDefault, frontShiny: String?
 }
 
@@ -171,7 +171,7 @@ struct OfficialArtwork: Decodable {
 }
 
 // MARK: - Stat
-struct Stat: Decodable {
+struct Stat: Decodable, Hashable {
     let baseStat, effort: Int?
     let stat: Species?
 }

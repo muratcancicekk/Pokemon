@@ -9,7 +9,7 @@ import Foundation
 
 struct Network {
     static let shared = Network()
-    func networkReq(url: String, success : @escaping (Pokemon) -> ()) {
+    func networkReq(url: String, success: @escaping (Pokemon) -> ()) {
         let url = URL(string: url)!
         let request = URLRequest(url: url)
         URLSession.shared.dataTask(with: request) { data, response, error in
