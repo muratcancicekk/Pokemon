@@ -10,4 +10,5 @@ import Foundation
 struct Constants {
     static let headerName = "Pokemon List"
     static let stats = "Stats"
+    static let splashImage = "splashImage"
 }

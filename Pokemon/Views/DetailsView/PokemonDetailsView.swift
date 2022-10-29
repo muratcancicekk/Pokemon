@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Kingfisher
 import FirebaseAnalytics
 
 struct PokemonDetailsView: View {
@@ -25,8 +24,17 @@ struct PokemonDetailsView: View {
             if viewModel.isLoaded {
                 Text(pokemonDetail?.name ?? "")
                     .makePrimaryLabel()
-                List(viewModel.deneme, id: \.self) { index in
-                    DetailsPokemonImageCell(pokemonImage: index)
+                GeometryReader { _ in
+                    ScrollView {
+                        LazyVGrid(columns: [
+                            GridItem(.flexible()),
+                            GridItem(.flexible()),
+                            GridItem(.flexible())], spacing: 3) {
+                            ForEach(viewModel.deneme, id: \.self) { index in
+                                DetailsPokemonImageCell(pokemonImage: index)
+                            }
+                        }
+                    }
                 }
                 Text(Constants.stats)
                     .makePrimaryLabel(size: 24, color: .cyan)

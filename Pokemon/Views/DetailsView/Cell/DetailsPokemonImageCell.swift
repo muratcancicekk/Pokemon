@@ -6,15 +6,14 @@
 //
 
 import SwiftUI
-import Kingfisher
-
+import SDWebImageSwiftUI
 struct DetailsPokemonImageCell: View {
     private var pokemonImage: String
     init(pokemonImage: String) {
         self.pokemonImage = pokemonImage
     }
     var body: some View {
-        KFImage(URL(string: pokemonImage))
+        AnimatedImage(url: URL(string: pokemonImage))
             .resizable()
             .frame(width: 60, height: 60)
     }

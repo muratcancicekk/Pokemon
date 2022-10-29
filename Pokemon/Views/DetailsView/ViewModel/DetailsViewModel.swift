@@ -15,14 +15,17 @@ final class PokemonDetailsViewModel: ObservableObject {
     func fetchPokemonDetail(url: String) {
         Network.shared.networkReq(url: url) { pokemon in
             self.pokemon = [pokemon]
+            print("hah",pokemon.sprites?.other?.officialArtwork?.frontDefault)
             self.deneme.append(pokemon.sprites?.frontDefault ?? "")
             self.deneme.append(pokemon.sprites?.backDefault ?? "")
             self.deneme.append(pokemon.sprites?.backShiny ?? "")
             self.deneme.append(pokemon.sprites?.frontShiny ?? "")
-            self.deneme.append(pokemon.sprites?.other?.dreamWorld?.frontDefault ?? "")
             self.deneme.append(pokemon.sprites?.other?.home?.frontShiny ?? "")
             self.deneme.append(pokemon.sprites?.other?.home?.frontDefault ?? "")
+            self.deneme.append(pokemon.sprites?.other?.dreamWorld?.frontDefault ?? "")
+            self.deneme.append(pokemon.sprites?.other?.dreamWorld?.frontDefault ?? "")
             self.deneme.append(pokemon.sprites?.other?.officialArtwork?.frontDefault ?? "")
+
             self.isLoaded = true
         }
     }

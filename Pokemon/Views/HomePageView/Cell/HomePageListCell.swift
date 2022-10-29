@@ -20,10 +20,6 @@ struct HomePageListCell: View {
                 .makePrimaryLabel()
             Spacer()
         }.padding()
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(.black, lineWidth: 0.5)
-                .clipped()
-                .shadow(color: Color.black, radius: 10, x: 0, y: 0))
-
     }
 }
 
