@@ -7,21 +7,29 @@
 
 import SwiftUI
 import Kingfisher
+import FirebaseAnalytics
 
 struct PokemonDetailsView: View {
-    @StateObject var viewModel = PokemonDetailsViewModel()
-    var pokemonDetail: Results
+    @StateObject private var viewModel = PokemonDetailsViewModel()
+    private var pokemonDetail: Results? {
+        didSet {
+            Analytics.logEvent("pokemonDetails", parameters: ["name": pokemonDetail?.name ?? "",
+                "id": viewModel.pokemon[0].id ?? ""])
+        }
+    }
     init(pokemonDetail: Results) {
         self.pokemonDetail = pokemonDetail
     }
     var body: some View {
         VStack {
             if viewModel.isLoaded {
-                Text(pokemonDetail.name ?? "")
-                Text(pokemonDetail.url ?? "")
+                Text(pokemonDetail?.name ?? "")
+                    .makePrimaryLabel()
                 List(viewModel.deneme, id: \.self) { index in
                     DetailsPokemonImageCell(pokemonImage: index)
                 }
+                Text(Constants.stats)
+                    .makePrimaryLabel(size: 24, color: .cyan)
                 List(viewModel.pokemon[0].stats!, id: \.self) { index in
                     DetailsPokemonCell(pokemonStats: index)
                 }
@@ -30,7 +38,8 @@ struct PokemonDetailsView: View {
                 ProgressView()
             }
         }.onAppear {
-            viewModel.fetchPokemonDetail(url: pokemonDetail.url ?? "")
+            viewModel.fetchPokemonDetail(url: pokemonDetail?.url ?? "")
         }
+
     }
 }

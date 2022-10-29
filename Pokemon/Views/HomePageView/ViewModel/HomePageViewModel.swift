@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class HomePageViewModel: ObservableObject {
+final class HomePageViewModel: ObservableObject {
     @Published var isLoaded = false
     @Published var homeListPokemon = [Results]()
 

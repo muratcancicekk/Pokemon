@@ -8,31 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var viewModel = HomePageViewModel()
+    @StateObject private var viewModel = HomePageViewModel()
     var body: some View {
         VStack {
             HStack {
-                Text("Pokemon List")
+                Text(Constants.headerName)
+                    .makePrimaryLabel(size: 24)
             }
-            HStack(spacing: 20) {
-                ScrollView {
-                    ForEach(viewModel.homeListPokemon, id: \.self) { item in
-                        NavigationLink {
-                            PokemonDetailsView(pokemonDetail: item)
-                        } label: {
-                            Image("pokemonImage")
-                                .resizable()
-                                .frame(width: 120, height: 120)
-                            Text(item.name ?? "")
-                                .fontWeight(.black)
-                                .foregroundColor(.white)
-                                .font(.system(size: 20))
-                        }
-
+            ScrollView {
+                ForEach(viewModel.homeListPokemon, id: \.self) { item in
+                    NavigationLink {
+                        PokemonDetailsView(pokemonDetail: item)
+                    } label: {
+                        HomePageListCell(pokeName: item)
                     }
                 }
-            } .background(.blue)
-                .cornerRadius(8)
+            }.frame(width: UIScreen.screenWidth - 20)
             Spacer()
         }
             .padding()

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class PokemonDetailsViewModel: ObservableObject {
+final class PokemonDetailsViewModel: ObservableObject {
     @Published var pokemon = [Pokemon]()
     @Published var isLoaded = false
     @Published var deneme = [String]()

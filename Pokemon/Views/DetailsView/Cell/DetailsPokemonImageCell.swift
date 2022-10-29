@@ -9,7 +9,7 @@ import SwiftUI
 import Kingfisher
 
 struct DetailsPokemonImageCell: View {
-    var pokemonImage: String
+    private var pokemonImage: String
     init(pokemonImage: String) {
         self.pokemonImage = pokemonImage
     }

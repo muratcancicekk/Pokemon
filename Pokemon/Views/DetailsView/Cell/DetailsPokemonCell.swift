@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailsPokemonCell: View {
-    var pokemonStats: Stat
+   private var pokemonStats: Stat
     init(pokemonStats: Stat) {
         self.pokemonStats = pokemonStats
     }
