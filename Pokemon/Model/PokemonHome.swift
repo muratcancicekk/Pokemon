@@ -7,10 +7,6 @@
 
 import Foundation
 
-
 struct PokemonHomeModel: Decodable, Hashable {
     let results: [Results]?
 }
-
-
-

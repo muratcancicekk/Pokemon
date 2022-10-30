@@ -23,10 +23,12 @@
 		FB3B5FFB290C2569001ACB2B /* Ability.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B5FFA290C2569001ACB2B /* Ability.swift */; };
 		FB3B5FFD290C2587001ACB2B /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B5FFC290C2587001ACB2B /* Species.swift */; };
 		FB3B5FFF290C259C001ACB2B /* GameIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B5FFE290C259C001ACB2B /* GameIndex.swift */; };
-		FB3B6004290C2A12001ACB2B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB3B6003290C2A12001ACB2B /* GoogleService-Info.plist */; };
 		FB3B6007290C2AB1001ACB2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B6006290C2AB1001ACB2B /* AppDelegate.swift */; };
 		FB3B600A290C2B8F001ACB2B /* RemoteConfigHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B6009290C2B8F001ACB2B /* RemoteConfigHelper.swift */; };
 		FB3B600D290C2BD5001ACB2B /* CacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3B600C290C2BD5001ACB2B /* CacheManager.swift */; };
+		FB526EEA290EA74A0044C010 /* RemoteConfigDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB526EE9290EA74A0044C010 /* RemoteConfigDefaults.plist */; };
+		FB526EEC290EB4880044C010 /* RCKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB526EEB290EB4870044C010 /* RCKey.swift */; };
+		FB526EF0290EB78B0044C010 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FB526EEF290EB78B0044C010 /* GoogleService-Info.plist */; };
 		FB71BBB9290D958500B4A481 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB71BBB8290D958500B4A481 /* SplashScreen.swift */; };
 		FB7614E9290B216E00823471 /* PokemonHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7614E8290B216E00823471 /* PokemonHome.swift */; };
 		FB7A64B5290A9D8D00BD0F3C /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FB7A64B4290A9D8D00BD0F3C /* FirebaseAnalytics */; };
@@ -83,10 +85,12 @@
 		FB3B5FFA290C2569001ACB2B /* Ability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ability.swift; sourceTree = "<group>"; };
 		FB3B5FFC290C2587001ACB2B /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
 		FB3B5FFE290C259C001ACB2B /* GameIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameIndex.swift; sourceTree = "<group>"; };
-		FB3B6003290C2A12001ACB2B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB3B6006290C2AB1001ACB2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB3B6009290C2B8F001ACB2B /* RemoteConfigHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigHelper.swift; sourceTree = "<group>"; };
 		FB3B600C290C2BD5001ACB2B /* CacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManager.swift; sourceTree = "<group>"; };
+		FB526EE9290EA74A0044C010 /* RemoteConfigDefaults.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = RemoteConfigDefaults.plist; sourceTree = "<group>"; };
+		FB526EEB290EB4870044C010 /* RCKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCKey.swift; sourceTree = "<group>"; };
+		FB526EEF290EB78B0044C010 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FB71BBB8290D958500B4A481 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		FB7614E8290B216E00823471 /* PokemonHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonHome.swift; sourceTree = "<group>"; };
 		FBC617A0290BDCB200563C67 /* DetailsPokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsPokemonCell.swift; sourceTree = "<group>"; };
@@ -172,7 +176,8 @@
 			isa = PBXGroup;
 			children = (
 				FB27E7B9290A88BE009D8278 /* Pokemon.entitlements */,
-				FB3B6003290C2A12001ACB2B /* GoogleService-Info.plist */,
+				FB526EEF290EB78B0044C010 /* GoogleService-Info.plist */,
+				FB526EE9290EA74A0044C010 /* RemoteConfigDefaults.plist */,
 				FB3B6005290C2AA4001ACB2B /* AppDelegate */,
 				FB27E7E3290A8C70009D8278 /* Assets */,
 				FB27E7DE290A8C22009D8278 /* Helpers */,
@@ -316,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				FB3B6009290C2B8F001ACB2B /* RemoteConfigHelper.swift */,
+				FB526EEB290EB4870044C010 /* RCKey.swift */,
 			);
 			path = RemoteConfig;
 			sourceTree = "<group>";
@@ -481,8 +487,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB27E7BC290A88BE009D8278 /* Preview Assets.xcassets in Resources */,
+				FB526EF0290EB78B0044C010 /* GoogleService-Info.plist in Resources */,
 				FB27E7B8290A88BE009D8278 /* Assets.xcassets in Resources */,
-				FB3B6004290C2A12001ACB2B /* GoogleService-Info.plist in Resources */,
+				FB526EEA290EA74A0044C010 /* RemoteConfigDefaults.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +574,7 @@
 				FB71BBB9290D958500B4A481 /* SplashScreen.swift in Sources */,
 				FBD8BA54290BC0430039A66C /* DetailsViewModel.swift in Sources */,
 				FBF12218290D2980005BE558 /* UIScreen+Extension.swift in Sources */,
+				FB526EEC290EB4880044C010 /* RCKey.swift in Sources */,
 				FBC617A6290BE07C00563C67 /* DetailsPokemonImageCell.swift in Sources */,
 				FBF1221D290D3424005BE558 /* View+Extension.swift in Sources */,
 				FB3B5FFB290C2569001ACB2B /* Ability.swift in Sources */,
@@ -721,6 +729,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pokemon/Pokemon.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -761,6 +770,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Pokemon/Pokemon.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Pokemon/Preview Content\"";
@@ -806,7 +816,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pokemon.PokemonTests;
+				PRODUCT_BUNDLE_IDENTIFIER = pokemon.Pokemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -829,7 +839,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = pokemon.PokemonTests;
+				PRODUCT_BUNDLE_IDENTIFIER = pokemon.Pokemon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";

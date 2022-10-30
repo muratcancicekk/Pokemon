@@ -12,7 +12,7 @@ struct PokemonHomeView: View {
     var body: some View {
         VStack {
             HStack {
-                Text(Constants.headerName)
+                Text(RemoteConfigHelper.value(forkey: RCKey.headerName))
                     .makePrimaryLabel(size: 24)
             }
             List(viewModel.homeListPokemon, id: \.self) { item in

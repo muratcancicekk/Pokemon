@@ -15,7 +15,6 @@ final class PokemonDetailsViewModel: ObservableObject {
     func fetchPokemonDetail(url: String) {
         Network.shared.networkReq(url: url) { pokemon in
             self.pokemon = [pokemon]
-            print("hah",pokemon.sprites?.other?.officialArtwork?.frontDefault)
             self.deneme.append(pokemon.sprites?.frontDefault ?? "")
             self.deneme.append(pokemon.sprites?.backDefault ?? "")
             self.deneme.append(pokemon.sprites?.backShiny ?? "")

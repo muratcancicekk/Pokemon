@@ -8,23 +8,32 @@
 import Foundation
 import FirebaseRemoteConfig
 
-enum RemoteConfigEnums: String
-{
-    case logoText = "LogoText"
-}
-
 class RemoteConfigHelper {
     static let shared = RemoteConfigHelper()
-    func fetchRemoteConfig() {
-        remoteConfig.fetch(withExpirationDuration: 0) { [weak self] status, error in
-            guard error == nil else { return }
-            remoteConfig.activate()
+    private static var remoteConfig: RemoteConfig = {
+        var remoteConig = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        remoteConig.configSettings = settings
+        remoteConig.setDefaults(fromPlist: "RemoteConfigDefaults")
+        return remoteConig
+    }()
+    static func configure(exprationDuration: TimeInterval = 3600.0) {
+        remoteConfig.fetch { (status, error) -> Void in
+          if status == .success {
+            print("Config fetched!")
+            self.remoteConfig.activate { changed, error in
+              // ...
+            }
+          } else {
+            print("Config not fetched")
+            print("Error: \(error?.localizedDescription ?? "No error available.")")
+          }
         }
+
     }
 
-    func displayNewValues(completion: @escaping (String) -> ()) {
-        let logoText = remoteConfig.configValue(forKey: RemoteConfigEnums.logoText.rawValue).stringValue ?? ""
-        CacheManager.shared.setLogoText(text: logoText)
-        completion(logoText)
+    static func value(forkey key: String) -> String {
+        return remoteConfig.configValue(forKey: key).stringValue!
     }
 }
