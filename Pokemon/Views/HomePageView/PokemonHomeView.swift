@@ -19,7 +19,7 @@ struct PokemonHomeView: View {
                 NavigationLink {
                     PokemonDetailsView(pokemonDetail: item)
                 } label: {
-                    HomePageListCell(pokeName: item).onAppear {
+                    HomePageListCell(imageUrl: viewModel.createUrlForImage(id:item.url ?? "" ), pokeName: item ).onAppear {
                         viewModel.cellIndex += 1
                         viewModel.shouldLoadData()
                     }

@@ -6,16 +6,20 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct HomePageListCell: View {
+    private var imageUrl: String
     private var pokeName: Results?
-    init(pokeName: Results? = nil) {
+    init(imageUrl: String, pokeName: Results? = nil) {
+        self.imageUrl = imageUrl
         self.pokeName = pokeName
     }
     var body: some View {
         HStack {
-            Image("pokemonImage")
-                .myImageModifier()
+            AnimatedImage(url: URL(string: imageUrl))
+                .resizable()
+                .frame(width: 60, height: 60)
             Text(pokeName?.name ?? "")
                 .makePrimaryLabel()
             Spacer()
@@ -23,8 +27,3 @@ struct HomePageListCell: View {
     }
 }
 
-struct HomePageListCell_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePageListCell()
-    }
-}

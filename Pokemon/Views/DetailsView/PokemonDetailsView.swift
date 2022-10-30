@@ -30,7 +30,7 @@ struct PokemonDetailsView: View {
                             GridItem(.flexible()),
                             GridItem(.flexible()),
                             GridItem(.flexible())], spacing: 3) {
-                            ForEach(viewModel.deneme, id: \.self) { index in
+                            ForEach(viewModel.pokemonImage, id: \.self) { index in
                                 DetailsPokemonImageCell(pokemonImage: index)
                             }
                         }
@@ -38,8 +38,10 @@ struct PokemonDetailsView: View {
                 }
                 Text(Constants.stats)
                     .makePrimaryLabel(size: 24, color: .cyan)
-                List(viewModel.pokemon[0].stats!, id: \.self) { index in
-                    DetailsPokemonCell(pokemonStats: index)
+                if let stat = viewModel.pokemon[0].stats {
+                    List(stat, id: \.self) { index in
+                        DetailsPokemonCell(pokemonStats: index)
+                    }
                 }
             }
             else {

@@ -9,22 +9,8 @@ import Foundation
 
 struct Network {
     static let shared = Network()
-    func networkReq(url: String, success: @escaping (Pokemon) -> ()) {
-        let url = URL(string: url)!
-        let request = URLRequest(url: url)
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            if let data = data {
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                if let decoded = try? decoder.decode(Pokemon.self, from: data) {
-                    DispatchQueue.main.asyncAfter(deadline: .now()) {
-                        success(decoded)
-                    }
-                }
-            }
-        }.resume()
-    }
-    func fetch (url: String, completion: @escaping(Result<PokemonHomeModel, Error>) -> Void) {
+
+    func fetch<T:Decodable> (url: String, completion: @escaping(Result<T, Error>) -> Void) {
 
         let request = NSMutableURLRequest(url: NSURL(string: url)! as URL,
             cachePolicy: .useProtocolCachePolicy,
@@ -42,7 +28,7 @@ struct Network {
             }
             do {
                 let decoder = JSONDecoder()
-                let product = try decoder.decode(PokemonHomeModel.self, from: data)
+                let product = try decoder.decode(T.self, from: data)
                 completion(.success(product))
             }
             catch {

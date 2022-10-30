@@ -6,8 +6,8 @@
 //
 
 import Foundation
-struct Ability: Decodable {
-    let ability: Species?
-    let isHidden: Bool?
-    let slot: Int?
-}
+//struct Ability: Decodable {
+//    let ability: Species?
+//    let isHidden: Bool?
+//    let slot: Int?
+//}

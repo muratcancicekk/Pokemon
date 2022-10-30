@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Species: Decodable, Hashable {
-    let name: String?
-    let url: String?
-}
+//struct Species: Decodable, Hashable {
+//    let name: String?
+//    let url: String?
+//}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GameIndex: Decodable {
-    let gameIndex: Int?
-    let version: Species?
-}
+//struct GameIndex: Decodable {
+//    let gameIndex: Int?
+//    let version: Species?
+//}

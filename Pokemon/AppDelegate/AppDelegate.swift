@@ -12,13 +12,14 @@ import FirebaseRemoteConfig
 import FirebaseMessaging
 import Firebase
 
-var remoteConfig = RemoteConfig.remoteConfig()
+// var remoteConfig = RemoteConfig.remoteConfig()
+
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         FirebaseApp.configure()
-        RemoteConfigHelper.configure(exprationDuration: 0)
+        RemoteConfigHelper.shared.configure(exprationDuration: 0)
         UNUserNotificationCenter.current().delegate = self
         let authOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { success, error in
