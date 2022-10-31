@@ -9,7 +9,6 @@
 - Firebase Cloud Messaging Integrated (Push Notification)
 - Firebase Analytics Integrated
 - Firebase Crashlytics Integrated
-![Screen Shot 2022-10-31 at 10 04 35](https://user-images.githubusercontent.com/62101026/198950643-dfef5bd3-0342-43d3-ad6d-7f3ff9a207f5.png)
 
 ## Third-Party Libraries
 - Firebase
