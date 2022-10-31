@@ -3,6 +3,7 @@
 ## Features
 - I used MVVM
 - Developed with SwiftUI
+- Used Swiftlint
 - Pixel perfect designed.
 - Firebase Remote Config Integrated
 - Firebase Cloud Messaging Integrated (Push Notification)
