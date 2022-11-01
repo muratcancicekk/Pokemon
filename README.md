@@ -9,6 +9,7 @@
 - Firebase Cloud Messaging Integrated (Push Notification)
 - Firebase Analytics Integrated
 - Firebase Crashlytics Integrated
+- Swiftlint Integrated
 
 ## Third-Party Libraries
 - Firebase
